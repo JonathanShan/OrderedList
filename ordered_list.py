@@ -6,7 +6,7 @@ class Node:
         self.prev = None
 
 class OrderedList:
-    '''A doubly-linked ordered list of integers, from lowest (head of list) to highest (tail of list)'''
+    '''A doubly-linked ordered list of items, from lowest (head of list) to highest (tail of list)'''
 
     def __init__(self):
         '''Use ONE dummy node as described in class
