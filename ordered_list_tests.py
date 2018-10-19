@@ -16,6 +16,21 @@ class TestLab4(unittest.TestCase):
         t_list.add(10)
         self.assertEqual(t_list.pop(0), 10)
 
-
+    def test_simple1(self):
+        t_list = OrderedList()
+        self.assertTrue(t_list.is_empty())
+        t_list.add(1)
+        t_list.add(2)
+        t_list.add(3)
+        t_list.add(4)
+        t_list.add(5)
+        t_list.add(6)
+        self.assertEqual(t_list.python_list(), [1,2,3,4,5,6])
+        self.assertEqual(t_list.python_list_reversed(), [6,5,4,3,2,1])
+        self.assertEqual(t_list.index(4), 3)
+        self.assertFalse(t_list.remove(7))
+        t_list.add(7)
+        self.assertTrue(t_list.remove(7))
+        self.assertEqual(t_list.pop(4), 5)
 if __name__ == '__main__': 
     unittest.main()
