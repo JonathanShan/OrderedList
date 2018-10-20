@@ -82,19 +82,22 @@ class OrderedList:
         if self.remove(start.item):
           return start.item
 
+    def _search(self, item, node):
+        if node.item == item:
+            return True
+        elif node.next.item == None:
+            return False
+        else:
+            return self._search(item, node.next)
+
     def search(self, item):
         '''Searches OrderedList for item, returns True if item is in list, False otherwise"
            To practice recursion, this method must call a RECURSIVE method that
            will search the list
            MUST have O(n) average-case performance'''
-        start = self.dummy.next
-        if start == self.dummy:
-          return False
-        elif start.item == item:
-          return True
-        else:
-          start = start.next
-          return search(item)
+        return self._search(item, self.dummy.next)
+    
+
 
     def python_list(self):
         '''Return a Python list representation of OrderedList, from head to tail

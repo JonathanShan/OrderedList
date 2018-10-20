@@ -30,7 +30,12 @@ class TestLab4(unittest.TestCase):
         self.assertEqual(t_list.index(4), 3)
         self.assertFalse(t_list.remove(7))
         t_list.add(7)
+        self.assertEqual(t_list.add(1), None)
         self.assertTrue(t_list.remove(7))
         self.assertEqual(t_list.pop(4), 5)
+        self.assertEqual(t_list.index(10), None)
+        self.assertRaises(IndexError, t_list.pop, 10)
+        self.assertTrue(t_list.search(6))
+        self.assertFalse(t_list.search(8))
 if __name__ == '__main__': 
     unittest.main()
